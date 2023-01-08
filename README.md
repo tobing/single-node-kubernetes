@@ -1,5 +1,5 @@
 # Single Node Kubernetes for Nginx & PHP-FPM
-Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Tested in Ubuntu 22.04 and AlmaLinux 8.4 RAM 2GB+```
+Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Tested in Ubuntu 22.04 and Rocky Linux 8.5 RAM 2GB+```
 > K3s is a highly available, certified Kubernetes distribution designed for production workloads in unattended, resource-constrained, remote locations or inside IoT appliances
 
 ## Installation
