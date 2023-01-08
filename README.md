@@ -81,3 +81,16 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 
 ![image](https://user-images.githubusercontent.com/16585545/211191995-c511e9ce-33e5-4af7-a5f5-56dea769f172.png)
 
+# Extend to multi node by adding a worker node
+
+Make sure the hostname for both master and worker node is not same
+
+## Installation for worker node
+
+1. Run this command in the worker node ```curl -sfL https://get.k3s.io | K3S_URL=https://MASTERNODEIP:6443 K3S_TOKEN=MASTERNODETOKEN sh - ```
+   MASTERNODETOKEN stored at ```/var/lib/rancher/k3s/server/node-token```
+   
+2. Run ```kubectl get node``` in the master node to check
+   ![image](https://user-images.githubusercontent.com/16585545/211222616-521bf3d3-8aed-44b7-8c49-7f27b5a7f14d.png)
+
+   
