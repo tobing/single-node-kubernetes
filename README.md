@@ -1,5 +1,5 @@
 # Single Node Kubernetes
-Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)
+Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Tested in Ubuntu 22.04 and AlmaLinux 8.4 RAM 2GB+```
 > K3s is a highly available, certified Kubernetes distribution designed for production workloads in unattended, resource-constrained, remote locations or inside IoT appliances
 
 ## Installation
@@ -40,7 +40,7 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)
     
 11. Back to the web browser and open http://EXTERNAL-IP/test.php. Reload the page several times and the hostname will changed. This mean requests served by different pod
 
-12. To check Horizontal Pod AutoScaler (hpa) need to open 2 shell session
+12. To test Horizontal Pod AutoScaler (hpa) need to open 2 shell session
     - First shell to monitor the pods run command ```watch -n1 kubectl get pods```
     - Second shell from same or different server to run ab apache benchmark (change -n value accordingly)
         ```ab -n 100000 -c 1000 http://EXTERNAL-IP/test.php/```
@@ -48,6 +48,17 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)
     After the ab apache benchmark running for some time, you will see the pods replica increasing in the first shell
 
 13. You can modify *hpa.yaml in the sections ```minReplicas```, ```maxReplicas```, ```averageUtilization```. After modified run ```kubectl apply -f .``` then test again and verify
+
+## kubectl command options
+
+- Show pods, deployments, services, persistent volumes, persistent volume claims, horizontal pod autoscaler  
+    ```kubectl get pods,deploy,svc,pv,pvc,hpa```
+- Show pods, deployments, services, persistent volumes, persistent volume claims, horizontal pod autoscaler in all namespaces
+ 
+    ```kubectl get pods,deploy,svc,pv,pvc,hpa --all-namespaces -o wide```
+- Delete pods, deployments, services, persistent volumes, persistent volume claims, horizontal pod autoscaler (Don't delete service/kubernetes)
+
+    ```kubectl delete pod/php-776fc877d8-gp2fm service/php ``` (use NAME from ```kubectl get pods,deploy,svc,pv,pvc,hpa```)
 
 
 ## Firewall Exceptions for K3s
