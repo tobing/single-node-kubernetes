@@ -43,7 +43,7 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 
 9. Open a web browser and go to http://EXTERNAL-IP. The page should show "403 Forbidden"
 
-10. Because the persistent volume location in /tmp we need to create a file to test ```vi /tmp/test.php``` and type code below and save
+10. Because the persistent volume location in /tmp we need to create a test file ```vi /tmp/test.php``` and type code below then save
     ```
     <?php
         echo gethostname();
