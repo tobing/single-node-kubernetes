@@ -21,10 +21,8 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 
 3. Check K3s installation ```kubectl get node```. Take note the node name and paste it to the local_persistentvolume.yaml section ```nodeAffinity.values```
 
-    ```
-    NAME                    STATUS   ROLES                  AGE   VERSION
-    greencloud.1665793034   Ready    control-plane,master   30d   v1.25.4+k3s1
-    ```
+    ![image](https://user-images.githubusercontent.com/16585545/211205542-0f97d2f9-01a4-4501-998b-55c429ff98c5.png)
+
     
 4. Traefik service installed and running automatically after K3s installation completed. Because Traefik & Nginx service using port 80, we need to delete Traefik service ```kubectl --namespace kube-system delete svc traefik```
 
