@@ -61,7 +61,7 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 - Show pods, deployments, services, persistent volumes, persistent volume claims, horizontal pod autoscaler in all namespaces
  
     ```kubectl get pods,deploy,svc,pv,pvc,hpa --all-namespaces -o wide```
-- Delete pods, deployments, services, persistent volumes, persistent volume claims, horizontal pod autoscaler (Don't delete service/kubernetes)
+- Delete pods, deployments, services, persistent volumes, persistent volume claims, horizontal pod autoscaler all at once (Don't delete service/kubernetes)
 
     ```kubectl delete pod/php-776fc877d8-gp2fm service/php ``` (use NAME from ```kubectl get pods,deploy,svc,pv,pvc,hpa```)
 
