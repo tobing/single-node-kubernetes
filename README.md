@@ -4,11 +4,7 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 
 ## Installation
 
-1. Install K3s using ```curl -sfL https://get.k3s.io | sh - ```
-
-2. Check K3s installation ```kubectl get node```
-
-3. Clone this repository: ```git clone https://github.com/tobing/single-node-kubernetes.git ``` 
+1. Clone this repository: ```git clone https://github.com/tobing/single-node-kubernetes.git ``` 
     
     >local_persistentvolume.yaml :   To define volume in the local host (/tmp) [link](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
     
@@ -21,7 +17,15 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
     
     >nginx_configMap.yaml        :   To define config related to app (nginx.conf) [link](https://kubernetes.io/docs/concepts/configuration/configmap/)
     
+2. Install K3s using ```curl -sfL https://get.k3s.io | sh - ```
 
+3. Check K3s installation ```kubectl get node```. Take note the node name and paste it to the local_persistentvolume.yaml section ```nodeAffinity.values```
+
+    ```
+    NAME                    STATUS   ROLES                  AGE   VERSION
+    greencloud.1665793034   Ready    control-plane,master   30d   v1.25.4+k3s1
+    ```
+    
 4. Traefik service installed and running automatically after K3s installation completed. Because Nginx service will use port 80 also, we need to delete Traefik service ```kubectl --namespace kube-system delete svc traefik```
 
 5. Go to inside ```single-node-kubernetes``` directory and run ```kubectl apply -f .```
@@ -52,7 +56,13 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
         
     After the ab apache benchmark running for some time, you will see the pods replica increasing in the first shell
 
-13. You can modify *hpa.yaml in the sections ```minReplicas```, ```maxReplicas```, ```averageUtilization```. After modified run ```kubectl apply -f .``` then test again and verify
+13. You can modify 
+
+    - *hpa.yaml in the sections ```minReplicas```, ```maxReplicas```, ```averageUtilization```
+    
+    - *deployment.yaml in the sections ```resources```
+    
+    After modified run ```kubectl apply -f .``` then test again and verify
 
 ## kubectl command options
 
