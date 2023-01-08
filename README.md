@@ -26,7 +26,7 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
     greencloud.1665793034   Ready    control-plane,master   30d   v1.25.4+k3s1
     ```
     
-4. Traefik service installed and running automatically after K3s installation completed. Because Nginx service will use port 80 also, we need to delete Traefik service ```kubectl --namespace kube-system delete svc traefik```
+4. Traefik service installed and running automatically after K3s installation completed. Because Traefik & Nginx service using port 80, we need to delete Traefik service ```kubectl --namespace kube-system delete svc traefik```
 
 5. Go to inside ```single-node-kubernetes``` directory and run ```kubectl apply -f .```
 
