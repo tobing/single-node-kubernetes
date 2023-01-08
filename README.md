@@ -10,11 +10,11 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 
 3. Clone this repository: ```git clone https://github.com/tobing/single-node-kubernetes.git ``` 
     ```
-    local_persistentvolume.yaml :   To define volume in the local host (/tmp)
-    *_deployment.yaml           :   To define kubernetes Deployment object
-    *_service.yaml              :   To define kubernetes Service
-    *_hpa.yaml                  :   To define kubernetes Horizontal Pod Autoscaler
-    nginx_configMap.yaml        :   To define config related to app (nginx.conf)
+    local_persistentvolume.yaml :   To define volume in the local host (/tmp) [link](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+    *_deployment.yaml           :   To define kubernetes Deployment object [link](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+    *_service.yaml              :   To define kubernetes Service [link](https://kubernetes.io/docs/concepts/services-networking/service/)
+    *_hpa.yaml                  :   To define kubernetes Horizontal Pod Autoscale [link](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+    nginx_configMap.yaml        :   To define config related to app (nginx.conf) [link](https://kubernetes.io/docs/concepts/configuration/configmap/)
     ```
 
 4. Traefik service installed and running automatically after K3s installation completed. Because Nginx service will use port 80 also, we need to delete Traefik service ```kubectl --namespace kube-system delete svc traefik```
@@ -40,7 +40,7 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
     
 11. Back to the web browser and open http://EXTERNAL-IP/test.php. Reload the page several times and the hostname will changed. This mean requests served by different pod
 
-12. To test Horizontal Pod AutoScaler (hpa) need to open 2 shell session
+12. To test Horizontal Pod AutoScale (hpa) need to open 2 shell session
     - First shell to monitor the pods run command ```watch -n1 kubectl get pods```
     - Second shell from same or different server to run ab apache benchmark (change -n value accordingly)
         ```ab -n 100000 -c 1000 http://EXTERNAL-IP/test.php/```
