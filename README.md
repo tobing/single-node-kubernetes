@@ -27,7 +27,7 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
     - For pod       :   ```kubectl describe pod/php-776fc877d8-2q2fq```
     - For service   :   ```kubectl describe service/nginx```  
     
-8. Take note the EXTERNAL-IP for ```service/nginx```. The TYPE is LoadBalancer so we able to access the service from outside cluster
+8. Take note the EXTERNAL-IP for ```service/nginx```. The TYPE is [LoadBalancer](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
 
 9. Open a web browser and go to http://EXTERNAL-IP. The page should show "403 Forbidden"
 
