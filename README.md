@@ -9,13 +9,18 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 2. Check K3s installation ```kubectl get node```
 
 3. Clone this repository: ```git clone https://github.com/tobing/single-node-kubernetes.git ``` 
-    ```
-    local_persistentvolume.yaml :   To define volume in the local host (/tmp) [link](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
-    *_deployment.yaml           :   To define kubernetes Deployment object [link](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
-    *_service.yaml              :   To define kubernetes Service [link](https://kubernetes.io/docs/concepts/services-networking/service/)
-    *_hpa.yaml                  :   To define kubernetes Horizontal Pod Autoscale [link](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
-    nginx_configMap.yaml        :   To define config related to app (nginx.conf) [link](https://kubernetes.io/docs/concepts/configuration/configmap/)
-    ```
+    
+    >local_persistentvolume.yaml :   To define volume in the local host (/tmp) [link](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+    
+    >*_deployment.yaml           :   To define kubernetes Deployment object [link](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+
+
+    >*_service.yaml              :   To define kubernetes Service [link](https://kubernetes.io/docs/concepts/services-networking/service/)
+    
+    >*_hpa.yaml                  :   To define kubernetes Horizontal Pod Autoscale [link](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+    
+    >nginx_configMap.yaml        :   To define config related to app (nginx.conf) [link](https://kubernetes.io/docs/concepts/configuration/configmap/)
+    
 
 4. Traefik service installed and running automatically after K3s installation completed. Because Nginx service will use port 80 also, we need to delete Traefik service ```kubectl --namespace kube-system delete svc traefik```
 
