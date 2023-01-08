@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    tier: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tier: backend
+    spec:      
+      containers:
+      - name: nginx
+        image: nginx:1.23
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: local-pv-storage
+          mountPath: "/usr/share/nginx/html"
+        - name: config
+          mountPath: /etc/nginx/conf.d
+        resources: # You need to specify the metric the HPA object will reference
+          requests:
+            memory: "64Mi"
+            cpu: "125m"
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
+      volumes:
+      - name: local-pv-storage
+        persistentVolumeClaim:
+          claimName: local-pv-claim
+      - name: config
+        configMap:
+          name: nginx-config
+          items:
+          - key: config
+            path: site.conf
