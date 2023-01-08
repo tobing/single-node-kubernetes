@@ -32,7 +32,7 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 
 6. Verify all running properly ```kubectl get pods,deploy,svc,pv,pvc,hpa```
 
-    ![image](https://user-images.githubusercontent.com/16585545/211195376-0086be52-96dd-4687-9fc0-536f503271c3.png)
+    ![image](https://user-images.githubusercontent.com/16585545/211197147-d25dee00-2025-4598-811d-0f6d9c5d4bf7.png)
 
 
 7. If something wrong check with ```kubectl describe <NAME>```, example
