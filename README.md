@@ -32,6 +32,9 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 
 6. Verify all running properly ```kubectl get pods,deploy,svc,pv,pvc,hpa```
 
+    ![image](https://user-images.githubusercontent.com/16585545/211195376-0086be52-96dd-4687-9fc0-536f503271c3.png)
+
+
 7. If something wrong check with ```kubectl describe <NAME>```, example
     - For pod       :   ```kubectl describe pod/php-776fc877d8-2q2fq```
     - For service   :   ```kubectl describe service/nginx```  
