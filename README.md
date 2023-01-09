@@ -86,7 +86,7 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 > **Warning**
 > Local persistent volume /tmp
 
-Make sure the hostname for both master and worker node is not same
+Make sure docker engine installed and the hostname for master and worker node is not same
 
 ## Installation for worker node
 
