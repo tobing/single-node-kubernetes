@@ -112,4 +112,4 @@ Make sure the hostname for both master and worker node is not same
 7. Open a web browser and go to http://EXTERNAL-IP/test.php. See step 11 master node installation. 
    Reload the page several times and we will see the hostname or "404 not found" error message. "404 not found" because the request served by pod in the worker node      and test.php is not exist in the /tmp of worker node
    
-8. Follow step 10 master node installation by creating test.php in the /tmp of worker node and reload the page. We will see the hostname properly without "404 not found". Because of this we realize, multi node persistent volume need to use a cloud storage (accessible from everywhere)
+8. Follow step 10 master node installation by creating test.php in the /tmp of worker node and reload the page. We will see the hostname properly without "404 not found". Because of this we realize, multi node persistent volume need to use a cloud storage (storage accessible from everywhere)
