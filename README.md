@@ -92,7 +92,7 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 > Make sure docker engine installed and the hostname is not same with master node hostname
 
 > **Note**
-> Local persistent volume [ReadWriteOnce](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) access mode (see step 7 below) 
+> Local persistent volume [ReadWriteOnce](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) access mode (see step 7 below for the impact) 
 
 
 ## Installation for worker node
