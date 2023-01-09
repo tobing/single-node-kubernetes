@@ -106,7 +106,7 @@ Make sure the hostname for both master and worker node is not same
 
 5. Start all by run ```kubectl apply -f .```
 
-6. Check by command ```kubectl get pod -o wide``. We will see pods running in both master and worker node
+6. Check by command ```kubectl get pod -o wide```. We will see pods running in both master and worker node
 
     ![image](https://user-images.githubusercontent.com/16585545/211226562-f742042a-d370-46d7-9a79-227ac0539127.png)
 
