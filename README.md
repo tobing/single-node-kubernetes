@@ -120,6 +120,6 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
    
    Reload the page several times and we will see the hostname or "404 not found" error message. "404 not found" because the request served by pod in the worker node      and test.php is not exist in the /tmp of worker node
    
-8. Follow step 10 master node installation by creating test.php in the /tmp of worker node and reload the page. 
+8. Follow step 10 master node installation by creating test.php in the /tmp of worker node and reload the page several times. 
    
    We will see the hostname properly without "404 not found". Because of this, we realize about [local persistent volume](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner) impact for multi node (Recommended to use NFS or cloud storage for multi node)
