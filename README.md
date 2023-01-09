@@ -85,13 +85,13 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 &nbsp;
 
 # Extend to multi node by adding a worker node
+```This worker node tested in Ubuntu 22.04 RAM 1GB+```
 
 > **Note**
 > Make sure docker engine installed and the hostname is not same with master node hostname
 
 > **Note**
 > Local persistent volume /tmp (see step 7 below)
-
 
 
 ## Installation for worker node
