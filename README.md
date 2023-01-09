@@ -119,4 +119,4 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
    
 8. Follow step 10 master node installation by creating test.php in the /tmp of worker node and reload the page. 
    
-   We will see the hostname properly without "404 not found". Because of this we realize, multi node persistent volume need to use a cloud storage (storage accessible  from everywhere)
+   We will see the hostname properly without "404 not found". Because of this, we realize about local persistent volume impact for multi node
