@@ -53,6 +53,7 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 12. To test Horizontal Pod AutoScale (hpa) need to open 2 shell session
     - First shell to monitor the pods run command ```watch -n1 kubectl get pods```
     - Second shell from same or different server to run ab apache benchmark (change -n value accordingly)
+   
         ```ab -n 100000 -c 1000 http://EXTERNAL-IP/test.php/```
         
     After the ab apache benchmark running for some time, you will see the pods replica increasing in the first shell
