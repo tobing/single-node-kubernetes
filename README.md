@@ -81,6 +81,9 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 
 ![image](https://user-images.githubusercontent.com/16585545/211191995-c511e9ce-33e5-4af7-a5f5-56dea769f172.png)
 
+&nbsp;
+&nbsp;
+
 # Extend to multi node by adding a worker node
 
 > **Note**
