@@ -91,6 +91,7 @@ Make sure the hostname for both master and worker node is not same
 ## Installation for worker node
 
 1. Run this command in the worker node ```curl -sfL https://get.k3s.io | K3S_URL=https://MASTERNODEIP:6443 K3S_TOKEN=MASTERNODETOKEN sh - ```
+
    MASTERNODETOKEN stored at ```/var/lib/rancher/k3s/server/node-token```
    
 2. Run ```kubectl get node``` in the master node to check
@@ -110,6 +111,9 @@ Make sure the hostname for both master and worker node is not same
     ![image](https://user-images.githubusercontent.com/16585545/211226562-f742042a-d370-46d7-9a79-227ac0539127.png)
 
 7. Open a web browser and go to http://EXTERNAL-IP/test.php. See step 11 master node installation. 
+   
    Reload the page several times and we will see the hostname or "404 not found" error message. "404 not found" because the request served by pod in the worker node      and test.php is not exist in the /tmp of worker node
    
-8. Follow step 10 master node installation by creating test.php in the /tmp of worker node and reload the page. We will see the hostname properly without "404 not found". Because of this we realize, multi node persistent volume need to use a cloud storage (storage accessible from everywhere)
+8. Follow step 10 master node installation by creating test.php in the /tmp of worker node and reload the page. 
+   
+   We will see the hostname properly without "404 not found". Because of this we realize, multi node persistent volume need to use a cloud storage (storage accessible  from everywhere)
