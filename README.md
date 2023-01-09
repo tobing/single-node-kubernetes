@@ -83,10 +83,13 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
 
 # Extend to multi node by adding a worker node
 
-> **Warning**
-> Local persistent volume /tmp
+> **Note**
+> Make sure docker engine installed and the hostname is not same with master node hostname
 
-Make sure docker engine installed and the hostname for master and worker node is not same
+> **Note**
+> Local persistent volume /tmp (see step 7 below)
+
+
 
 ## Installation for worker node
 
