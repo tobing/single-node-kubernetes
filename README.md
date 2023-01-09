@@ -100,7 +100,7 @@ Make sure the hostname for both master and worker node is not same
 3. Before adding the worker node to persistent volume, we need to stop all by running ```kubectl delete deployment.apps/nginx deployment.apps/php service/php service/nginx persistentvolume/local-pv persistentvolumeclaim/local-pv-claim horizontalpodautoscaler.autoscaling/nginx-hpa horizontalpodautoscaler.autoscaling/php-hpa```
     - If we don't stop all of them we will get ```The PersistentVolume "local-pv" is invalid: nodeAffinity:  field is immutable```
     - We cannot just stop PV because used by others, so need to stop all
-4. Add the worker node hostname to ```local_persistentvolume.yaml```
+4. Add the worker node name to ```local_persistentvolume.yaml```
 
     ![image](https://user-images.githubusercontent.com/16585545/211226295-009a2e30-20c3-4d2e-acc1-8ea755e6c25f.png)
 
