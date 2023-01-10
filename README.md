@@ -37,6 +37,8 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
     - Reload for service config change ```systemctl daemon-reload```
     - Start K3s service ```service k3s start```
     - Check Traefik service not running ``````kubectl get svc -n=kube-system``````
+
+    >Or delete the service ```kubectl --namespace kube-system delete svc traefik``` (not recommended)
     
 5. Go to inside ```single-node-kubernetes``` directory and run ```kubectl apply -f .```
 
