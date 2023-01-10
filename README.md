@@ -24,7 +24,7 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
     ![image](https://user-images.githubusercontent.com/16585545/211205542-0f97d2f9-01a4-4501-998b-55c429ff98c5.png)
 
     
-4. Traefik service installed and running automatically after K3s installation completed. Because Traefik & Nginx service using port 80, we need to disable it first 
+4. Traefik service installed and running automatically after K3s installation completed. Because Traefik & Nginx service using port 80, we need to <b>DISABLE</b> it first 
     - Check Traefik using port 80 ```kubectl get svc -n=kube-system```
     - Stop K3s service ```service k3s stop```
     - Modify ```/etc/systemd/system/k3s.service``` by adding ```--disable=traefik \``` in the end of ExecStart 
@@ -38,7 +38,9 @@ Single Node Kubernetes for Nginx & PHP-FPM with [K3s](https://k3s.io/)  ```Teste
     - Start K3s service ```service k3s start```
     - Check Traefik service not running ``````kubectl get svc -n=kube-system``````
 
-    >Or delete the service ```kubectl --namespace kube-system delete svc traefik``` (not recommended)
+    >Or <b>DELETE</b> the service ```kubectl --namespace kube-system delete svc traefik``` (not recommended)
+   
+   &nbsp;
     
 5. Go to inside ```single-node-kubernetes``` directory and run ```kubectl apply -f .```
 
