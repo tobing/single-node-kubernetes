@@ -19,9 +19,6 @@ spec:
       containers:
       - name: php
         image: php:8-fpm-alpine
-        volumeMounts:
-        - name: local-pv-storage
-          mountPath: "/usr/share/nginx/html"
         resources: # You need to specify the metric the HPA object will reference
           requests:
             memory: "64Mi"
@@ -29,7 +26,3 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "250m"
-      volumes:
-      - name: local-pv-storage
-        persistentVolumeClaim:
-          claimName: local-pv-claim
